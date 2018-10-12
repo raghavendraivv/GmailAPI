@@ -1,12 +1,10 @@
 from __future__ import print_function
 import httplib2
 import os
-
 from apiclient import discovery
 from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
-
 try:
     import argparse
     flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
@@ -23,7 +21,6 @@ credentials = authInst.get_credentials()
 
 http = credentials.authorize(httplib2.Http())
 service = discovery.build('gmail', 'v1', http=http)
-
 
 import send_email
 

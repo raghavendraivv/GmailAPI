@@ -28,5 +28,5 @@ service = discovery.build('gmail', 'v1', http=http)
 import send_email
 
 sendInst = send_email.send_email(service)
-message = sendInst.create_message('ivvraghavendra1999@gmail.com','123456sasank@gmail.com', 'Hello_API','Hello this is testing Mail')
+message = sendInst.create_message('from','to', 'Hello_API','Hello this is testing Mail')
 sendInst.send_message('me',message)
